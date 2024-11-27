@@ -10,15 +10,16 @@ import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
 @Composable
-fun FrameworkPage(
+fun SectionDetailsPage(
+    navController: NavController,
     title: String,
     description: String,
-    onBackToFrameworks: () -> Unit,
+    chapterId: String,
     modifier: Modifier = Modifier
 ) {
     val scrollState = rememberScrollState()
@@ -40,29 +41,24 @@ fun FrameworkPage(
             Text(
                 text = title,
                 fontSize = 24.sp,
-                textAlign = TextAlign.Start,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 16.dp)
+                modifier = Modifier.padding(bottom = 16.dp)
             )
+
             Text(
                 text = description,
                 fontSize = 16.sp,
-                textAlign = TextAlign.Start,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 16.dp)
+                modifier = Modifier.padding(bottom = 16.dp)
             )
         }
 
         if (isAtBottom.value) {
             Button(
-                onClick = onBackToFrameworks,
+                onClick = { navController.navigate("chapter/$chapterId") },
                 modifier = Modifier
                     .align(Alignment.BottomCenter)
                     .padding(16.dp)
             ) {
-                Text(text = "Return to Frameworks")
+                Text(text = "Back to Chapter")
             }
         }
     }

@@ -6,59 +6,68 @@ object FrameworkRepository {
     val frameworks = listOf(
         Framework(
             id = "framework1",
-            title = "Framework 1 Title",
+            title = "The Utilitarian Approach",
             description = """
-            Framework 1 provides detailed guidelines on ethical considerations for computing professionals.
+            The Utilitarian Approach focuses on actions that provide the greatest good or the least harm for all affected parties. 
+            It aims to maximize positive outcomes and minimize negative consequences.
+
             Key Points:
-            - Promote public trust.
-            - Protect privacy and confidentiality.
-            - Avoid deceptive practices and conflicts of interest.
-        """.trimIndent()
+            - Ethical actions aim to produce the greatest good and minimize harm.
+            - Balances benefits and consequences for all stakeholders, including customers, employees, and the environment.
+            - Focuses on increasing good outcomes while reducing harmful impacts.
+            """.trimIndent()
         ),
         Framework(
             id = "framework2",
-            title = "Framework 2 Title",
+            title = "The Rights Approach",
             description = """
-            Framework 2 emphasizes the importance of ensuring fairness, accountability, and transparency in computing systems.
+            The Rights Approach emphasizes protecting and respecting the moral rights of all individuals. 
+            It is based on the inherent dignity of individuals and their ability to choose freely.
+
             Key Points:
-            - Ensure accessibility for all.
-            - Be accountable for systems' outcomes.
-            - Enhance transparency in decision-making processes.
-        """.trimIndent()
+            - Prioritizes the moral rights of individuals, including truth, privacy, and personal freedom.
+            - Encourages treating people as ends, not means to other ends.
+            - Stresses duties to respect the rights of others.
+            """.trimIndent()
         ),
         Framework(
             id = "framework3",
-            title = "Framework 3 Title",
+            title = "The Fairness or Justice Approach",
             description = """
-            Framework 3 focuses on fostering innovation while adhering to ethical guidelines in the development of new technologies.
+            The Fairness or Justice Approach is rooted in the principle of treating all individuals equally and fairly. 
+            Ethical actions should be based on defensible standards of fairness.
+
             Key Points:
-            - Promote innovation that benefits society.
-            - Address ethical implications of emerging technologies.
-            - Balance progress with responsibility.
-        """.trimIndent()
+            - Promotes equal treatment for all individuals or justifiable unequal treatment based on defensible standards.
+            - Encourages fairness in compensation and opportunities.
+            - Questions practices like significant disparities in salaries or imbalances of power.
+            """.trimIndent()
         ),
         Framework(
             id = "framework4",
-            title = "Framework 4 Title",
+            title = "The Common Good Approach",
             description = """
-            Framework 4 highlights the importance of sustainability and environmental impact in computing practices.
+            The Common Good Approach highlights the importance of actions that contribute to the welfare of the community. 
+            It values respect, compassion, and interdependence within society.
+
             Key Points:
-            - Minimize environmental footprint of technologies.
-            - Develop sustainable computing solutions.
-            - Encourage practices that reduce e-waste and conserve resources.
-        """.trimIndent()
+            - Encourages respect and compassion for all, particularly the vulnerable.
+            - Stresses the importance of shared systems like public health, education, and safety.
+            - Advocates for actions that enhance community welfare and interconnectedness.
+            """.trimIndent()
         ),
         Framework(
             id = "framework5",
-            title = "Framework 5 Title",
+            title = "The Virtue Approach",
             description = """
-            Framework 5 underscores the significance of collaboration and inclusivity in the computing industry.
+            The Virtue Approach focuses on actions that align with ideal virtues, enabling individuals to act at their highest potential. 
+            Virtue ethics emphasize character and values like truth, courage, and integrity.
+
             Key Points:
-            - Foster collaboration across disciplines and teams.
-            - Promote diversity and inclusion in technology development.
-            - Ensure equitable access to computing resources.
-        """.trimIndent()
+            - Encourages actions that align with virtues like honesty, courage, and fairness.
+            - Focuses on personal growth and humanity's full potential.
+            - Asks how actions reflect on one's character and best self.
+            """.trimIndent()
         )
     )
-
 }
