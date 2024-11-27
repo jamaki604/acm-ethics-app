@@ -5,20 +5,19 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.derivedStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import com.example.acmethicsapp.model.Section
 
 @Composable
-fun FrameworkPage(
+fun SectionPage(
+    navController: NavController,
     title: String,
-    description: String,
-    onBackToFrameworks: () -> Unit,
+    sections: List<Section>,
     modifier: Modifier = Modifier
 ) {
     val scrollState = rememberScrollState()
@@ -33,36 +32,36 @@ fun FrameworkPage(
             modifier = Modifier
                 .fillMaxSize()
                 .verticalScroll(scrollState)
-                .padding(bottom = 64.dp), // Leave space for the button
+                .padding(bottom = 64.dp),
             verticalArrangement = Arrangement.Top,
-            horizontalAlignment = Alignment.Start
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
                 text = title,
                 fontSize = 24.sp,
-                textAlign = TextAlign.Start,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 16.dp)
+                modifier = Modifier.padding(bottom = 16.dp)
             )
-            Text(
-                text = description,
-                fontSize = 16.sp,
-                textAlign = TextAlign.Start,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 16.dp)
-            )
+
+            sections.forEach { section ->
+                Button(
+                    onClick = { navController.navigate("section/${section.id}") },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 4.dp)
+                ) {
+                    Text(text = section.title)
+                }
+            }
         }
 
         if (isAtBottom.value) {
             Button(
-                onClick = onBackToFrameworks,
+                onClick = { navController.navigate("handbook") },
                 modifier = Modifier
                     .align(Alignment.BottomCenter)
                     .padding(16.dp)
             ) {
-                Text(text = "Return to Frameworks")
+                Text(text = "Return to Chapters")
             }
         }
     }

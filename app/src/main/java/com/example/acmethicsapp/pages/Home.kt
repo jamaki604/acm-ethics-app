@@ -13,7 +13,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.example.acmethicsapp.data.FrameworkRepository
 import coil.compose.rememberAsyncImagePainter
 
 @Composable
@@ -26,6 +25,7 @@ fun Home(navController: NavController, modifier: Modifier = Modifier) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        // Logo
         Image(
             painter = rememberAsyncImagePainter("file:///android_asset/acm_logo.jpg"),
             contentDescription = "ACM Code of Ethics Logo",
@@ -33,6 +33,8 @@ fun Home(navController: NavController, modifier: Modifier = Modifier) {
                 .size(200.dp)
                 .padding(bottom = 24.dp)
         )
+
+        // Welcome Text
         Text(
             text = "Welcome to ACM Ethics App",
             fontSize = 24.sp,
@@ -41,24 +43,40 @@ fun Home(navController: NavController, modifier: Modifier = Modifier) {
                 .padding(bottom = 8.dp)
         )
         Text(
-            text = "Select a framework to learn more!",
+            text = "Learn about ethical principles and explore frameworks!",
             fontSize = 12.sp,
             textAlign = TextAlign.Center,
             modifier = Modifier.padding(bottom = 16.dp)
         )
 
+        // ACM Code of Ethics Handbook Button
+        Button(
+            onClick = { navController.navigate("handbook") },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = 8.dp)
+        ) {
+            Text(text = "ACM Code of Ethics Handbook")
+        }
 
-        // Dynamically generated buttons
-        FrameworkRepository.frameworks.forEach { framework ->
-            Button(
-                onClick = { navController.navigate(framework.id) },
-                modifier = Modifier
-                    .width(200.dp) // Set a fixed width for the button
-                    .align(Alignment.CenterHorizontally) // Aligns the button in the center
-                    .padding(vertical = 4.dp) // Adds vertical spacing between buttons
-            ) {
-                Text(text = framework.title)
-            }
+        // Explore Frameworks Button
+        Button(
+            onClick = { navController.navigate("frameworks") },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = 8.dp)
+        ) {
+            Text(text = "Explore Frameworks")
+        }
+
+        // Credits Button
+        Button(
+            onClick = { navController.navigate("credits") },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = 8.dp)
+        ) {
+            Text(text = "Credits")
         }
     }
 }
