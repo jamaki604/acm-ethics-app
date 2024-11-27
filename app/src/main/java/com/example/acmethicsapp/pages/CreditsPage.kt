@@ -98,6 +98,31 @@ fun CreditsPage(navController: NavController, modifier: Modifier = Modifier) {
                 textAlign = TextAlign.Start,
                 modifier = Modifier.padding(bottom = 16.dp)
             )
+            // Ethical Standards Source Section
+            Spacer(modifier = Modifier.height(16.dp))
+            Text(
+                text = "Ethical Standards Source",
+                fontSize = 24.sp,
+                modifier = Modifier.padding(bottom = 16.dp)
+            )
+            Text(
+                text = "Source: “A Framework for Thinking Ethically.” ETHICS 1, no. 2 (Winter 1988).",
+                fontSize = 16.sp,
+                textAlign = TextAlign.Start,
+                modifier = Modifier.padding(bottom = 4.dp)
+            )
+            ClickableText(
+                text = AnnotatedString("http://www.scu.edu/ethics/practicing/decision/framework.html"),
+                onClick = {
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse("http://www.scu.edu/ethics/practicing/decision/framework.html"))
+                    context.startActivity(intent)
+                },
+                style = androidx.compose.ui.text.TextStyle(
+                    color = Color.Blue,
+                    fontSize = 16.sp,
+                    textAlign = TextAlign.Start
+                )
+            )
         }
 
         if (isAtBottom.value) {

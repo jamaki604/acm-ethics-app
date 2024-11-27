@@ -21,6 +21,9 @@ fun AppNavigation() {
         composable("home") { Home(navController) }
 
         // Handbook Page (List of Chapters)
+        composable("preamble") { PreamblePage(navController) }
+
+        // Handbook Page (List of Chapters)
         composable("handbook") { ChaptersPage(navController) }
 
         // Frameworks Page

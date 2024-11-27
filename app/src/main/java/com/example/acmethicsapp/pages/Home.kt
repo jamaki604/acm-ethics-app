@@ -49,6 +49,16 @@ fun Home(navController: NavController, modifier: Modifier = Modifier) {
             modifier = Modifier.padding(bottom = 16.dp)
         )
 
+        // Preamble Button
+        Button(
+            onClick = { navController.navigate("preamble") },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = 8.dp)
+        ) {
+            Text(text = "Preamble")
+        }
+
         // ACM Code of Ethics Handbook Button
         Button(
             onClick = { navController.navigate("handbook") },
@@ -66,7 +76,7 @@ fun Home(navController: NavController, modifier: Modifier = Modifier) {
                 .fillMaxWidth()
                 .padding(vertical = 8.dp)
         ) {
-            Text(text = "Explore Frameworks")
+            Text(text = "Explore Ethical Frameworks")
         }
 
         // Credits Button

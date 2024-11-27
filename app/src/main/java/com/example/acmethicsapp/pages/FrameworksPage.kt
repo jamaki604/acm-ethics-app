@@ -32,11 +32,16 @@ fun FrameworksPage(navController: NavController, modifier: Modifier = Modifier) 
                 .verticalScroll(scrollState)
                 .padding(bottom = 64.dp),
             verticalArrangement = Arrangement.Top,
-            horizontalAlignment = Alignment.Start
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = "Explore Frameworks",
+                text = "5 Sources of Ethical Standards",
                 fontSize = 24.sp,
+                modifier = Modifier.padding(bottom = 16.dp)
+            )
+            Text(
+                text = "Explore Frameworks",
+                fontSize = 16.sp,
                 modifier = Modifier.padding(bottom = 16.dp)
             )
 
